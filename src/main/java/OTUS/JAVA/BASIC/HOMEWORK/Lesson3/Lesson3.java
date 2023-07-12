@@ -1,4 +1,4 @@
-package OTUS.JAVA.BASIC.HOMEWORK.Lesson3;
+package otus.java.basic.homework.Lesson3;
 
 import java.util.Scanner;
 
@@ -26,12 +26,12 @@ public class Lesson3 {
     }
 
     public static void selectColor() {
-        int data = 15;
+        int data = 25;
         if (data <= 10) {
             System.out.println("Red");
         } else if (data <= 20) {
             System.out.println("Eloy");
-        } else if (data > 20) {
+        } else  {
             System.out.println("Green");
         }
     }
@@ -61,19 +61,19 @@ public class Lesson3 {
         System.out.println("Введите число от 1 до 5");
         switch (scanner.nextInt()){
             case 1:
-                System.out.println("Вы выиграли автомобиль!!!");
+                greetings();
                 break;
             case 2:
-                System.out.println("Вы выиграли телефон!!!");
+                checkSign(5, -10, 30);
                 break;
             case 3:
-                System.out.println("Вы выиграли подгузники!!!");
+                selectColor();
                 break;
             case 4:
-                System.out.println("Вы выиграли рулетку!!!");
+                compareNumbers();
                 break;
             case 5:
-                System.out.println("Вы выиграли загородный дом на 2000 кв метров!!!");
+                scannerNam();
                 break;
         }
     }
