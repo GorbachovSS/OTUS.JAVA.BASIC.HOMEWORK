@@ -9,7 +9,7 @@ public class MainApplication {
         dog.swim(500);
         dog.info();
 
-        Cat cat = new Cat("Кузьмич", 6, 4);
+        Cat cat = new Cat("Кузьмич", 6);
         cat.info();
         cat.run(500);
         System.out.println();
