@@ -1,12 +1,12 @@
 package otus.java.basic.homework.lesson11;
 
 public class Animal {
-    String name;
-    int speedRun;
-    int speedSwimming;
-    int endurance;
-    int spend;
-    int timeOfAction;
+   protected String name;
+    protected int speedRun;
+    protected int speedSwimming;
+    protected int endurance;
+    protected int spend;
+    protected int timeOfAction;
 
     public Animal(String name, int speedRun, int speedSwimming) {
         this.name = name;

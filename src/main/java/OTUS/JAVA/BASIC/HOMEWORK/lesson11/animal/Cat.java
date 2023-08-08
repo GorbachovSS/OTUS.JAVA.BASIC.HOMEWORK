@@ -1,4 +1,6 @@
-package otus.java.basic.homework.lesson11;
+package otus.java.basic.homework.lesson11.animal;
+
+import otus.java.basic.homework.lesson11.Animal;
 
 public class Cat extends Animal {
     public Cat(String name, int speedRun) {

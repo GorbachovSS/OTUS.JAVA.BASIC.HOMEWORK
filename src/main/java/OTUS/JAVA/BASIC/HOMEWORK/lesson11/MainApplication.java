@@ -1,5 +1,9 @@
 package otus.java.basic.homework.lesson11;
 
+import otus.java.basic.homework.lesson11.animal.Cat;
+import otus.java.basic.homework.lesson11.animal.Dog;
+import otus.java.basic.homework.lesson11.animal.Horse;
+
 public class MainApplication {
     public static void main(String[] args) {
         Dog dog = new Dog("Мила", 4, 2);
