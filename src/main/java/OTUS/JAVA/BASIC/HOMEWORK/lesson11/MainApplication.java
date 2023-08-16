@@ -14,7 +14,7 @@ public class MainApplication {
         dog.info();
         System.out.println();
 
-        Cat cat = new Cat("Барсик", 2, 10, 0);
+        Cat cat = new Cat("Барсик", 2, 10);
         cat.info();
         cat.run(10);
         cat.swim(10);

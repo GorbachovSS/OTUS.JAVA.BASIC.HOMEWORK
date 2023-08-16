@@ -7,9 +7,5 @@ public class Horse extends Animal{
         super(name, speedRun, speedSwim, endures, staminaCost);
     }
 
-    public int swim(int distance) {
 
-        int  timeOfAction = super.swim(distance);
-        return timeOfAction;
-    }
 }

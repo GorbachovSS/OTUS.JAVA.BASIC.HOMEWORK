@@ -2,9 +2,9 @@ package otus.java.basic.homework.lesson11.animal;
 
 public class Cat extends Animal {
 
-    public Cat(String name, int speedRun, int endures, int staminaCost) {
+    public Cat(String name, int speedRun, int endures) {
 
-        super(name, speedRun, 0, endures, staminaCost);
+        super(name, speedRun, 0, endures, 0);
     }
 
     public int swim(int distance) {
