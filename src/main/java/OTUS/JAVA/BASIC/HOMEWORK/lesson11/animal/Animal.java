@@ -5,12 +5,14 @@ public abstract class Animal {
     protected int speedRun;
     protected int speedSwim;
     protected int endurance;
+    protected int staminaCost;
 
-    public Animal(String name, int speedRun, int speedSwim, int endures) {
+    public Animal(String name, int speedRun, int speedSwim, int endures, int staminaCost) {
         this.name = name;
         this.speedRun = speedRun;
         this.speedSwim = speedSwim;
         this.endurance = endures;
+        this.staminaCost = staminaCost;
     }
 
     public int run(int distance) {
@@ -26,7 +28,7 @@ public abstract class Animal {
         return timeOfAction;
     }
 
-    public int swim(int distance, int staminaCost) {
+    public int swim(int distance) {
         int timeOfAction = 0;
         if (endurance / staminaCost >= distance) {
             endurance -= distance * staminaCost;

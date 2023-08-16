@@ -6,7 +6,7 @@ import otus.java.basic.homework.lesson11.animal.Horse;
 
 public class MainApplication {
     public static void main(String[] args) {
-        Dog dog = new Dog("Бобик", 2, 1, 10);
+        Dog dog = new Dog("Бобик", 2, 1, 10, 2);
         dog.info();
         dog.run(10);
         dog.swim(10);
@@ -14,7 +14,7 @@ public class MainApplication {
         dog.info();
         System.out.println();
 
-        Cat cat = new Cat("Барсик", 2, 10);
+        Cat cat = new Cat("Барсик", 2, 10, 0);
         cat.info();
         cat.run(10);
         cat.swim(10);
@@ -22,7 +22,7 @@ public class MainApplication {
         cat.info();
         System.out.println();
 
-        Horse horse = new Horse("Сахарок", 4, 2,30);
+        Horse horse = new Horse("Сахарок", 4, 2,30, 4);
         horse.info();
         horse.run(10);
         horse.swim(4);
