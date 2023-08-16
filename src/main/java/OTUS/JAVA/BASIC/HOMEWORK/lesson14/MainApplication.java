@@ -10,7 +10,7 @@ public class MainApplication {
             System.out.println();
             System.out.println("Метод работает исправно!");
         } catch (MyArraySizeException e) {
-            System.out.println("Размер массива превышен!");
+            System.out.println("Неправильный размер массива!");
         } catch (MyArrayDataException e) {
             System.out.println("Неправильное значение массива!");
             System.out.println("Ошибка в ячейке: " + e.i + "x" + e.j);
@@ -22,13 +22,16 @@ public class MainApplication {
     public static void Array(String[][] arr) throws MyArraySizeException, MyArrayDataException{
 
 
-            int[][] arrInt = new int[2][3];
+            int[][] arrInt = new int[4][4];
             Random random = new Random();
-            if (arr.length != 4) {
-                throw new MyArraySizeException();
-            }
+        if (arrInt.length != 4) {
+            throw new MyArraySizeException();
+        }
             int sum = 0;
             for (int i = 0; i < arr.length; i++) {
+                if (arr.length != 4 && arr[i].length != 4) {
+                    throw new MyArraySizeException();
+                }
                 for (int j = 0; j < arr[i].length; j++) {
                     arr[i][j] = String.valueOf(random.nextInt(20) / 2);
                     arrInt[i][j] = Integer.parseInt(arr[i][j]);
@@ -37,6 +40,7 @@ public class MainApplication {
                 System.out.println();
             }
             for (int i = 0; i < arrInt.length; i++) {
+
                 for (int j = 0; j < arrInt[i].length; j++) {
                     try {
                     sum += arrInt[i][j];
