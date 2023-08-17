@@ -1,59 +1,72 @@
 package otus.java.basic.homework.lesson14;
 
-import java.lang.reflect.Array;
-import java.util.Random;
-
 public class MainApplication {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         try {
-            Array(new String[4][4]);
+            exChecked(new String[][]{
+                    {"1", "1", "1", "1"},
+                    {"1", "1", "1", "1"},
+                    {"1", "1", "1", "1"},
+                    {"1", "1", "1", "1"}});
             System.out.println();
             System.out.println("Метод работает исправно!");
+
         } catch (MyArraySizeException e) {
             System.out.println("Неправильный размер массива!");
         } catch (MyArrayDataException e) {
-            System.out.println("Неправильное значение массива!");
-            System.out.println("Ошибка в ячейке: " + e.i + "x" + e.j);
+            System.out.println("\nНеправильное значение массива!");
+            System.out.println("Ошибка в ячейке: " + e.i + " x " + e.j);
         }
 
     }
 
-
-    public static void Array(String[][] arr) throws MyArraySizeException, MyArrayDataException{
-
-
-            int[][] arrInt = new int[4][4];
-            Random random = new Random();
-        if (arrInt.length != 4) {
-            throw new MyArraySizeException();
-        }
-            int sum = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr.length != 4 && arr[i].length != 4) {
-                    throw new MyArraySizeException();
-                }
-                for (int j = 0; j < arr[i].length; j++) {
-                    arr[i][j] = String.valueOf(random.nextInt(20) / 2);
-                    arrInt[i][j] = Integer.parseInt(arr[i][j]);
-                    System.out.print(arr[i][j] + " ");
-                }
-                System.out.println();
+    public static int exChecked(String[][] arr) {
+        int sum = 0;
+        if (arr.length != 4) {
+            try {
+                throw new MyArraySizeException();
+            } catch (MyArraySizeException e) {
+                throw new RuntimeException(e);
             }
-            for (int i = 0; i < arrInt.length; i++) {
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
 
-                for (int j = 0; j < arrInt[i].length; j++) {
+                try {
+                    sum += Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
                     try {
-                    sum += arrInt[i][j];
-                    }catch (NumberFormatException e) {
                         throw new MyArrayDataException(i, j);
+                    } catch (MyArrayDataException ex) {
+                        throw new RuntimeException(ex);
                     }
                 }
-
             }
-            System.out.println("Сумма чисел массива: " + sum);
-
+            System.out.println();
         }
+        System.out.println("Сумма масива: " + sum);
+        return sum;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
