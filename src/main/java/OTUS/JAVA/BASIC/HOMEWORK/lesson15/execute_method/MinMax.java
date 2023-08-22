@@ -7,9 +7,9 @@ public class MinMax {
     public ArrayList<Integer> minMax(int min, int max) {
         ArrayList<Integer> arrayList = new ArrayList<>();
 
-        for (int i = min; i <= max; i+= 1) {
+        for (int i = min; i <= max; i++) {
             arrayList.add(i);
-            System.out.println(arrayList.toString());
+            System.out.println(arrayList);
         }
         return arrayList;
     }
