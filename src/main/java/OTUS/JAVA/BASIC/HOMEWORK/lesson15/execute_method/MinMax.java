@@ -1,6 +1,5 @@
 package otus.java.basic.homework.lesson15.execute_method;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MinMax {

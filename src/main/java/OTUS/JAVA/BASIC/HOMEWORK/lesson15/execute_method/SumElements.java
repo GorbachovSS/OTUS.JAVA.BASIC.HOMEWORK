@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class SumElements {
     Random random = new Random();
-
     public ArrayList<Integer> fillSumArray() {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i <= 5; i++) {
