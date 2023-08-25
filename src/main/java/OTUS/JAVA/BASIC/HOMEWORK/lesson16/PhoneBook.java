@@ -1,42 +1,38 @@
 package otus.java.basic.homework.lesson16;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.Map;
 
 public class PhoneBook {
+    private HashMap<String, ArrayList<String>> phoneBookMap = new HashMap<>();
 
-
-    public static void main(String[] args) {
-        HashMap<String, String> hashMap = new HashMap<>();
-        add(new HashMap<>());
-
-    }
-
-    public static void add(HashMap<String, String> addMap) {
-        int yes = 1;
-        int no = 2;
-        int amountOfMemory = 16;  // Количество памяти
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < amountOfMemory; i++) {
-
-            System.out.println("Хотите записать номер? \n 1. ДА  \n 2. НЕТ");
-            if (scanner.nextInt() == yes) {
-                System.out.println("Веведите имя: ");
-                String name = scanner.next();
-                System.out.println("Введите номер телефона: ");
-                String phone = scanner.next();
-                addMap.put(name, phone);
-                System.out.println("Память спавочника: " + amountOfMemory);
-                amountOfMemory--;
-                System.out.println("В можете записать ещё: " + amountOfMemory + " номеров");
-            } else {
-                System.out.println("Вы отказались записать номер");
-                System.out.println(addMap);
-                add(new HashMap<>());
+    public void add(String name, String phone) {
+        ArrayList<String> phoneNumbers = phoneBookMap.get(name);
+        if (phoneNumbers == null) {
+            ArrayList<String> numbers = new ArrayList<>();
+            numbers.add(phone);
+            phoneBookMap.put(name, numbers);
+        } else {
+            if (!phoneNumbers.contains(phone)) {
+                phoneNumbers.add(phone);
+                phoneBookMap.put(name, phoneNumbers);
             }
         }
+    }
 
+    public ArrayList<String> find(String name) {
+        return phoneBookMap.get(name);
+    }
 
-        System.out.println(addMap);
+    public String containsPhoneNumber(String phone) {
+        for (Map.Entry<String, ArrayList<String>> entry : phoneBookMap.entrySet()) {
+            for (String n : entry.getValue()) {
+                if (n.equals(phone)) {
+                    return entry.getKey();
+                }
+            }
+        }
+        return null;
     }
 }
